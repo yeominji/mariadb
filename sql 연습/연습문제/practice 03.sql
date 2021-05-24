@@ -25,7 +25,7 @@ select a.last_name, e.dept_name , b.title  from employees a ,titles b , dept_emp
 select b.salary from titles a , salaries b where  a.emp_no= b.emp_no and a.to_date='9999-01-01'and  b.to_date='9999-01-01' and b.salary >=40000 and a.title ='Engineer' order by  b.salary asc;
 
 -- 문제8. 현재 직원(직책)의  급여가 50000이 넘는 직책을 직책, 급여로 급여가 큰 순서대로 출력하시오
-select  a.title , b.salary from titles a , salaries b where a.emp_no =b.emp_no and  and a.to_date='9999-01-01'and  b.to_date='9999-01-01' b.salary >=50000  order by b.salary asc;   
+select  a.title , b.salary from titles a , salaries b where a.emp_no =b.emp_no and  a.to_date='9999-01-01'and  b.to_date='9999-01-01'and b.salary >=50000  order by b.salary asc;   
 -- 문제9. 현재, 부서별 평균 연봉을 연봉이 큰 부서 순서대로 출력하세요.
 select a.dept_name, avg(b.salary) as avg_salary from departments a , salaries b, dept_emp c  where c.emp_no =b.emp_no and a.dept_no=c.dept_no group by a.dept_name order by avg_salary  desc; 
 -- 문제10. 현재, 직책별 평균 연봉을 연봉이 큰 직책 순서대로 출력하세요.
